@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="ISO-8859-1" />
+    <title>Listagem de Aviao</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+    <div class="container pt-5">
+      <a th:href="@{/product/create}">Cadastrar Aviao</a>
+      <h1>Listagem de Aviao</h1>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Modelo</th>
+            <th scope="col">Fabricante</th>
+            <th scope="col">Tipo da missão</th>
+            <th scope="col">Alcance maximo</th>
+            <th scope="col">Velocidade Maxima</th>
+            <th scope="col">Tripulação</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr th:each="aviao : ${aviaoList}">
+                <td scope="row" th:text="${aviao.nome}"></td>
+                <td scope="row" th:text="${aviao.modelo}"></td>
+                <td scope="row" th:text="${aviao.fabricante}"></td>
+                <td scope="row" th:text="${aviao.tipoMissao}"></td>
+                <td scope="row" th:text="${aviao.alcanceKm}"></td>
+                <td scope="row" th:text="${aviao.velocidadeMax}"></td>
+                <td scope="row" th:text="${aviao.tripulacao}"></td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>

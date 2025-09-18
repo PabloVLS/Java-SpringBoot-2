@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1" />
+    <title>Cadastrar Avião </title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+</head>
+
+<body>
+    <div class="container pt-5">
+        <h1>Cadastrar Avião</h1>
+        <form action="#" th:action="@{/aviao/save}" th:object="${aviao}" method="POST">
+            <div class="form-group row">
+                <label for="nome" class="col-sm-2 col-form-label">Nome</label>
+                <div class="col-sm-10">
+                    <input type="text" th:field="*{nome}" class="form-control" id="nome" name="nome"
+                        placeholder="Digite o nome do avião">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="modelo" class="col-sm-2 col-form-label">Modelo</label>
+                <div class="col-sm-10">
+                    <input type="text" th:field="*{modelo}" class="form-control" id="modelo" name="modelo"
+                        placeholder="Digite o modelo do avião">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="fabricante" class="col-sm-2 col-form-label">Fabricante</label>
+                <div class="col-sm-10">
+                    <input type="text" th:field="*{fabricante}" class="form-control" id="fabricante" name="fabricante"
+                        placeholder="Digite o fabricante do avião">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="tipoMissao" class="col-sm-2 col-form-label">Tipo de Missão</label>
+                <div class="col-sm-10">
+                    <input type="text" th:field="*{tipoMissao}" class="form-control" id="tipoMissao" name="tipoMissao"
+                        placeholder="Digite o tipo de missão">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="alcanceKm" class="col-sm-2 col-form-label">Alcance (km)</label>
+                <div class="col-sm-10">
+                    <input type="number" th:field="*{alcanceKm}" class="form-control" id="alcanceKm" name="alcanceKm"
+                        placeholder="Digite o alcance do avião (km)">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="velocidadeMax" class="col-sm-2 col-form-label">Velocidade Máxima (km/h)</label>
+                <div class="col-sm-10">
+                    <input type="number" th:field="*{velocidadeMax}" class="form-control" id="velocidadeMax"
+                        name="velocidadeMax" placeholder="Digite a velocidade máxima do avião">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="tripulacao" class="col-sm-2 col-form-label">Tripulação</label>
+                <div class="col-sm-10">
+                    <input type="number" th:field="*{tripulacao}" class="form-control" id="tripulacao" name="tripulacao"
+                        placeholder="Digite o número de tripulantes">
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-info col-2">Cadastrar Avião</button>
+        </form>
+
+    </div>
+</body>
+
+</html>
