@@ -29,9 +29,10 @@ public class SecurityConfig {
 
         http.authorizeHttpRequests(requests -> requests
                 .requestMatchers("/home", "/register", "/saveUser").permitAll()
+                .requestMatchers("/aviao/*").hasAuthority("Admin")
                 .anyRequest().authenticated())
                 .formLogin(login -> login
-                        .defaultSuccessUrl("/aviao", true))
+                        .defaultSuccessUrl("/", true))
                 .logout(logout -> logout
                         .logoutRequestMatcher(new AntPathRequestMatcher("/logout")))
                 .exceptionHandling(handling -> handling

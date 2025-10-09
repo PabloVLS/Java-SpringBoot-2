@@ -45,6 +45,11 @@
             </tr>
         </tbody>
       </table>
+      <div class="row">
+        <a th:href="@{/aviao/create}">
+          <button sec:authorize="hasAuthority('Admin')" class="btn btn-primary">Cadastrar Aeronave</button>
+        </a>
+      </div>
     </div>
     <th:block th:replace="~{fragments/footer :: footer}"></th:block>
 
