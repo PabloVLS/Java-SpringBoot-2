@@ -29,7 +29,7 @@ public class AviaoController {
     @GetMapping("/aviao/create")
     public String create(Model model) {
         model.addAttribute("aviao", new Aviao());
-        return "aviao/create";
+        return "aviao/form";
     }
 
     @PostMapping("/aviao/save")
@@ -38,7 +38,7 @@ public class AviaoController {
         System.out.println(aviao);
         if (result.hasErrors()) {
             model.addAttribute("aviao", aviao);
-            return "aviao/create";
+            return "aviao/form";
         }
 
         aviaoService.saveAviao(aviao);
@@ -50,7 +50,7 @@ public class AviaoController {
     public String edit(@PathVariable Long id, Model model) {
         Aviao aviao = aviaoService.getAviaoById(id);
         model.addAttribute("aviao", aviao);
-        return "aviao/edit";
+        return "aviao/form";
     }
 
     @GetMapping("/aviao/delete/{id}")
